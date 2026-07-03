@@ -1,6 +1,6 @@
 # myPersonalSite
 
-My personal portfolio — a starry, hand-illustrated corner of the internet for my software, my playlists, and my (large) bookshelf.
+My personal portfolio — a starry corner of the internet for my software, my playlists, and my (large) bookshelf.
 
 🔗 **Live:** https://paridhisaboo.github.io/myPersonalSite/
 
