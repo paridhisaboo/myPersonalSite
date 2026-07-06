@@ -1,34 +1,34 @@
 # myPersonalSite
 
-My personal portfolio — a starry, hand-illustrated corner of the internet for my software, my playlists, and my (large) bookshelf.
+Personal portfolio for **Paridhi Saboo** — second-year Computer Science @ University of Waterloo, seeking a SWE internship / co-op.
 
 🔗 **Live:** https://paridhisaboo.github.io/myPersonalSite/
 
+A sleek, monochrome "chrome" portfolio: pure black, white/grey, Helvetica, with liquid-chrome accents.
+
+## Pages
+- **`index.html`** — landing: intro, selected work, skills, contact
+- **`work.html`** — four projects in depth (MacroLens, COAT, SignSpeak, Netflix Ratings) with metrics
+- **`about.html`** — the personal side: perception, art, live music + playlist, and a reading list
+
 ## Built with
-- **HTML** — structure (`index.html`)
-- **CSS** — styling, layout, the watercolor/starry theming (`styles.css`)
-- **JavaScript** — scroll-driven animations, the book staircase, the turntable, and the recommendation forms (`script.js`)
+- **HTML** — one file per page, sharing a nav + footer
+- **CSS** — `styles.css` (shared): monochrome theme, chrome effects, layout, responsive
+- **JavaScript** — `script.js` (shared): sparkle field, scroll reveals, metric count-ups, recommendation forms
 
-No build step, no dependencies — just open `index.html`.
+No build step, no dependencies, no web fonts (Helvetica is a system font). Just open `index.html`.
 
-## Features
-- A painterly, starry-night theme with hand-drawn SVG stars and watercolor washes
-- **Selected work** — four projects (MacroLens, COAT, SignSpeak, Netflix Ratings) with animated infographics
-- **The sound** — an embedded Spotify player + a "leave me a track" box, plus a turntable that follows you down the page
-- **The shelf** — a stack of books that winds into a descending spiral staircase as you scroll, over a full 40-book index
-- Fully responsive, keyboard-navigable, and respects `prefers-reduced-motion`
-
-## Structure
+## Files
 ```
-index.html      # markup
-styles.css      # all styles
-script.js       # all behavior (stars, reveals, staircase, turntable, forms)
-README.md
+index.html     work.html     about.html
+styles.css     script.js
+resume.pdf     README.md
 ```
 
 ## Editing
-- **Books:** edit the `SHELF` (full list) and `STAIR` (the 10 designed books) arrays at the bottom of `script.js`.
-- **Playlist:** swap the Spotify playlist ID in the `<iframe>` inside `index.html`.
+- **Résumé:** `resume.pdf` is linked in the nav — replace the file to update it.
+- **Playlist:** swap the Spotify playlist ID in the `<iframe>` on `about.html`.
+- **Projects:** edit the `.project` blocks in `work.html`.
 
 ---
 © Paridhi Saboo, 2026

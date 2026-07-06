@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — Paridhi Saboo</title>
+<meta name="description" content="Selected engineering work by Paridhi Saboo — MacroLens, COAT, SignSpeak, and a Netflix ratings extension." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".44" stop-color="#9a9aa0"/><stop offset=".5" stop-color="#37373b"/><stop offset=".56" stop-color="#9a9aa0"/><stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 C54 34 66 46 100 50 C66 54 54 66 50 100 C46 66 34 54 0 50 C34 46 46 34 50 0 Z" fill="url(#chrome)"/></symbol>
+</defs></svg>
+
+<div class="sky" aria-hidden="true"><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="wordmark" href="index.html"><span class="star"><svg width="16" height="16"><use href="#spark"/></svg></span> Paridhi Saboo</a>
+    <nav class="nav-links">
+      <a href="work.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
+      <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="sec" style="padding-top:70px">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Selected Work · 2024 – 2026</p>
+    <h2>Things I <em>built</em>, and how.</h2>
+  </div>
+
+  <!-- MacroLens -->
+  <article class="project reveal" id="macrolens">
+    <div class="p-info">
+      <div class="p-top"><span class="p-num">01</span><h3>MacroLens</h3></div>
+      <p class="hook">Nutrition tracking that skips the math.</p>
+      <p class="elab">Scan a barcode, get macros instantly — pulled from the USDA and Open Food Facts databases, all client-side. The engineering problem was speed: re-fetching the same foods dragged, so I put a PostgreSQL cache in front of every lookup.</p>
+      <ul>
+        <li>client-side <b>barcode scanning</b> across two food databases</li>
+        <li>AI nutrition tips <b>stream in</b> live via the Claude API</li>
+        <li>Prisma schema hardened against concurrent-write races</li>
+      </ul>
+      <div class="p-meta">
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Claude API</span></div>
+        <a class="repo" href="https://github.com/paridhisaboo/MacroLens" target="_blank" rel="noopener">Repository ↗</a>
+      </div>
+    </div>
+    <div class="p-graphic">
+      <span class="corner star"><svg width="16" height="16"><use href="#spark"/></svg></span>
+      <p class="gt">Cache impact · repeat lookups</p>
+      <div class="bars">
+        <div class="barrow"><span class="lab">No cache</span><div class="track"><div class="meter slow"></div></div><span class="val">~800ms</span></div>
+        <div class="barrow"><span class="lab">Cached</span><div class="track"><div class="meter fast"></div></div><span class="val">&lt;50ms</span></div>
+      </div>
+      <p class="speedup"><b class="chrome" data-count="16" data-suffix="×">16×</b><span>faster on cached records</span></p>
+    </div>
+  </article>
+
+  <!-- COAT -->
+  <article class="project flip reveal" id="coat">
+    <div class="p-info">
+      <div class="p-top"><span class="p-num">02</span><h3>COAT</h3></div>
+      <p class="hook">A co-op tracker that reads my inbox so I don&rsquo;t.</p>
+      <p class="elab">Job hunting buries you in email. COAT links Gmail and Outlook, and a model I trained on ~1,200 self-labelled emails sorts each one into offer, interview, or rejection — then drops interviews on your calendar. A regex fallback catches whatever the model isn&rsquo;t sure about.</p>
+      <ul>
+        <li><b>collaborative filtering</b> surfaces leads from anonymized peer outcomes</li>
+        <li>Gmail + Outlook <b>OAuth 2.0</b>, multi-account on Supabase</li>
+      </ul>
+      <div class="p-meta">
+        <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">scikit-learn</span><span class="tag">Supabase</span></div>
+        <a class="repo" href="https://github.com/paridhisaboo/coat" target="_blank" rel="noopener">Repository ↗</a>
+      </div>
+    </div>
+    <div class="p-graphic">
+      <span class="corner star"><svg width="16" height="16"><use href="#spark"/></svg></span>
+      <p class="gt">TF-IDF + Logistic Regression</p>
+      <div class="donutwrap">
+        <div class="donut">
+          <svg width="124" height="124" viewBox="0 0 124 124">
+            <circle cx="62" cy="62" r="52" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="12"/>
+            <circle class="arc" cx="62" cy="62" r="52" fill="none" stroke-width="12" stroke-linecap="round"/>
+          </svg>
+          <div class="ctr"><b data-count="94" data-suffix="%">94%</b><span>CV accuracy</span></div>
+        </div>
+        <div class="legend">
+          <div><i style="background:#fff"></i>offer</div>
+          <div><i style="background:#8a8a90"></i>interview</div>
+          <div><i style="background:#45454a"></i>rejection</div>
+        </div>
+      </div>
+      <p class="substat">trained on <b>~1,200</b> self-labelled emails</p>
+    </div>
+  </article>
+
+  <!-- SignSpeak -->
+  <article class="project reveal" id="signspeak">
+    <div class="p-info">
+      <div class="p-top"><span class="p-num">03</span><h3>SignSpeak</h3></div>
+      <p class="hook">Indian Sign Language → speech, in real time.</p>
+      <p class="elab">SignSpeak watches a live camera feed and speaks what it sees. I fine-tuned a MediaPipe hand-landmark model on a 26-letter dataset I curated across lighting and hand sizes. The hard part isn&rsquo;t one frame — it&rsquo;s knowing when a letter ends and a word begins.</p>
+      <ul>
+        <li>a <b>10-frame majority vote</b> kills jitter mid-gesture</li>
+        <li>a thread reads <b>1.5s pauses</b> as word breaks, then fires TTS</li>
+      </ul>
+      <div class="p-meta">
+        <div class="tags"><span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span></div>
+        <a class="repo" href="https://github.com/paridhisaboo/ISLDetector" target="_blank" rel="noopener">Repository ↗</a>
+      </div>
+    </div>
+    <div class="p-graphic">
+      <span class="corner star"><svg width="16" height="16"><use href="#spark"/></svg></span>
+      <p class="gt">Gesture-to-speech pipeline</p>
+      <div class="pipe">
+        <div class="pnode"><div class="ic">📷</div><div class="t">camera</div></div>
+        <div class="pnode"><div class="ic">✋</div><div class="t">21 landmarks</div></div>
+        <div class="pnode"><div class="ic">🎞️</div><div class="t">10-frame vote</div></div>
+        <div class="pnode"><div class="ic">⏸️</div><div class="t">1.5s = word</div></div>
+        <div class="pnode"><div class="ic">🔊</div><div class="t">TTS</div></div>
+      </div>
+      <div class="pbadges"><span class="pbadge">26 letters</span><span class="pbadge">self-curated data</span><span class="pbadge">jitter-free</span></div>
+    </div>
+  </article>
+
+  <!-- Netflix -->
+  <article class="project flip reveal" id="netflix">
+    <div class="p-info">
+      <div class="p-top"><span class="p-num">04</span><h3>Netflix Ratings</h3></div>
+      <p class="hook">IMDb + Rotten Tomatoes, right on the tile.</p>
+      <p class="elab">A Manifest V3 Chrome extension that stamps live IMDb and Rotten Tomatoes scores onto Netflix cards before you hover. Netflix is an SPA that swaps its DOM constantly, so the real trick was a MutationObserver that re-injects on every navigation — no reloads, no flicker.</p>
+      <ul>
+        <li>an <b>OMDb</b> background service worker fetches + caches scores</li>
+        <li><b>MutationObserver</b> survives SPA route changes</li>
+      </ul>
+      <div class="p-meta">
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Chrome MV3</span><span class="tag">OMDb API</span></div>
+        <a class="repo" href="https://github.com/paridhisaboo/Netflix-IMDb-RT-Ratings" target="_blank" rel="noopener">Repository ↗</a>
+      </div>
+    </div>
+    <div class="p-graphic">
+      <span class="corner star"><svg width="16" height="16"><use href="#spark"/></svg></span>
+      <p class="gt">Extension architecture</p>
+      <div class="arch">
+        <div class="abox"><span class="ic">🎬</span>Netflix tile</div>
+        <div class="abox"><span class="ic">💉</span>content script</div>
+        <div class="abox"><span class="ic">⚙️</span>service worker</div>
+        <div class="abox"><span class="ic">🌐</span>OMDb API</div>
+        <div class="arch-note"><b>MutationObserver</b> re-injects on every DOM swap ↻</div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="contact reveal">
+  <p class="eyebrow">Next</p>
+  <h2>More on <em>GitHub</em>.</h2>
+  <div class="clinks">
+    <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+    <a href="about.html">About Me</a>
+    <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fm">Paridhi Saboo</div>
+    <div class="foot-links">
+      <a href="mailto:pasaboo@uwaterloo.ca">Email</a>
+      <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="cp">© 2026</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

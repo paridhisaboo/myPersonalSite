@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Paridhi Saboo</title>
+<meta name="description" content="The other half of Paridhi Saboo — perception, art, live music, and a deep shelf of Japanese and contemporary literature." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".44" stop-color="#9a9aa0"/><stop offset=".5" stop-color="#37373b"/><stop offset=".56" stop-color="#9a9aa0"/><stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 C54 34 66 46 100 50 C66 54 54 66 50 100 C46 66 34 54 0 50 C34 46 46 34 50 0 Z" fill="url(#chrome)"/></symbol>
+</defs></svg>
+
+<div class="sky" aria-hidden="true"><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="wordmark" href="index.html"><span class="star"><svg width="16" height="16"><use href="#spark"/></svg></span> Paridhi Saboo</a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
+      <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="about-hero reveal">
+  <p class="eyebrow">About</p>
+  <h1>Curious about <em>everything</em>.</h1>
+  <p>I&rsquo;m Paridhi — a CS student at Waterloo, but the code is only half of it. My real hobby is <b>perception</b>: chasing new tastes, reading texture through my fingertips, and looking hard at art. I&rsquo;m interested in how things feel before I can explain why.</p>
+</section>
+
+<!-- LOOKING -->
+<section class="about-block reveal">
+  <div class="tag-col"><p class="eyebrow">Looking</p><span class="idx">01</span></div>
+  <div class="body">
+    <p>I love work that turns the artist into the subject. <b>Cindy Sherman</b>&rsquo;s <em>Untitled Film Stills</em> — where she plays every character in a movie that never existed — basically wrote the language of self-portraiture that so many women photographers speak now.</p>
+    <p>On the softer, stranger end: <b>Aya Takano</b>&rsquo;s dreamy cosmic figures and the emotional shorthand of <b>shōjo manga</b>. I collect the way images make me feel more than the way they&rsquo;re composed.</p>
+    <ul class="namelist"><li>Cindy Sherman</li><li>Aya Takano</li><li>Shōjo manga</li><li>Self-portraiture</li></ul>
+  </div>
+</section>
+
+<!-- LISTENING -->
+<section class="about-block reveal">
+  <div class="tag-col"><p class="eyebrow">Listening</p><span class="idx">02</span></div>
+  <div class="body">
+    <p>I&rsquo;d rather hear a band <em>live</em> than on a studio record — the imperfection makes it real. <b>wave to earth</b> and <b>Sunset Rollercoaster</b> live sets have lived in my head for months. When I&rsquo;m not at a show, I&rsquo;m DJing or building the next playlist.</p>
+    <div class="music-row">
+      <div class="player-frame">
+        <iframe title="Paridhi's playlist" src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="recbox">
+        <h4>Leave me a track</h4>
+        <p class="sub">what belongs on the next set?</p>
+        <form id="songForm">
+          <label for="s-name">Name (optional)</label>
+          <input id="s-name" name="name" type="text" placeholder="Anon" autocomplete="name" />
+          <label for="s-song">Song &amp; artist</label>
+          <input id="s-song" name="song" type="text" placeholder="wave to earth — bad" required />
+          <button type="submit">Send →</button>
+          <p class="ok" id="s-ok" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- READING -->
+<section class="about-block reveal">
+  <div class="tag-col"><p class="eyebrow">Reading</p><span class="idx">03</span></div>
+  <div class="body">
+    <p>Always mid-book, usually three at once. I&rsquo;m deep in <b>Japanese &amp; contemporary literature</b> — I&rsquo;ve read <b>fifteen</b> Murakami novels and I&rsquo;m still going. A handful I keep coming back to:</p>
+    <ul class="readlist">
+      <li><span class="ti">Kafka on the Shore</span><span class="au">Murakami</span></li>
+      <li><span class="ti">Norwegian Wood</span><span class="au">Murakami</span></li>
+      <li><span class="ti">Snow Country</span><span class="au">Kawabata</span></li>
+      <li><span class="ti">Breasts and Eggs</span><span class="au">Kawakami</span></li>
+      <li><span class="ti">Never Let Me Go</span><span class="au">Ishiguro</span></li>
+      <li><span class="ti">The Picture of Dorian Gray</span><span class="au">Wilde</span></li>
+      <li><span class="ti">A Little Life</span><span class="au">Yanagihara</span></li>
+      <li><span class="ti">Giovanni&rsquo;s Room</span><span class="au">Baldwin</span></li>
+    </ul>
+    <div class="recbox" style="margin-top:24px; max-width:440px">
+      <h4>Leave me a book</h4>
+      <p class="sub">what am I missing?</p>
+      <form id="bookForm">
+        <label for="b-title">Title &amp; author</label>
+        <input id="b-title" name="title" type="text" placeholder="The Setting Sun — Osamu Dazai" required />
+        <button type="submit">Add it →</button>
+        <p class="ok" id="b-ok" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal">
+  <p class="eyebrow">Contact</p>
+  <h2>Say <em>hello</em>.</h2>
+  <div class="clinks">
+    <a href="mailto:pasaboo@uwaterloo.ca">pasaboo@uwaterloo.ca</a>
+    <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fm">Paridhi Saboo</div>
+    <div class="foot-links">
+      <a href="mailto:pasaboo@uwaterloo.ca">Email</a>
+      <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="cp">© 2026</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

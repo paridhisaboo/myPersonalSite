@@ -3,390 +3,128 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>paridhi saboo</title>
-<meta name="description" content="Paridhi Saboo — second-year CS at Waterloo. Software, playlists, and a shelf that won't quit." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+<title>Paridhi Saboo — Software Engineer</title>
+<meta name="description" content="Paridhi Saboo — second-year Computer Science student at the University of Waterloo, seeking a software engineering internship / co-op." />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".44" stop-color="#9a9aa0"/><stop offset=".5" stop-color="#37373b"/><stop offset=".56" stop-color="#9a9aa0"/><stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 C54 34 66 46 100 50 C66 54 54 66 50 100 C46 66 34 54 0 50 C34 46 46 34 50 0 Z" fill="url(#chrome)"/></symbol>
+</defs></svg>
 
-<!-- defs: hand-drawn star + rough filters -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter>
-    <filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
-    <filter id="water" x="-30%" y="-30%" width="160%" height="160%"><feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="5" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="20"/><feGaussianBlur stdDeviation="2"/></filter>
-  </defs>
-  <symbol id="star" viewBox="0 0 24 24">
-    <path filter="url(#rough2)" d="M12 1.8l2.7 6.4 6.9.5-5.2 4.5 1.7 6.8L12 17.6l-6.8 4.4 1.7-6.8L1.7 8.7l6.9-.5z" fill="currentColor" stroke="rgba(0,0,0,.35)" stroke-width=".7" stroke-linejoin="round"/>
-  </symbol>
-</svg>
+<div class="sky" aria-hidden="true"><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
 
-<!-- sky -->
-<div class="sky" aria-hidden="true">
-  <div class="base"></div>
-  <div class="grain"></div>
-  <div class="starfield" id="starfield"></div>
-</div>
-
-<header class="bar">
-  <div class="bar-in">
-    <div class="brand">paridhi&nbsp;saboo</div>
-    <nav class="tabs" aria-label="Sections">
-      <a href="#work">work</a>
-      <a href="#sound">sound</a>
-      <a href="#shelf">shelf</a>
-      <a href="#about" class="soon">about</a>
-      <a href="#contact">contact</a>
+<header class="nav">
+  <div class="nav-in">
+    <a class="wordmark" href="index.html"><span class="star"><svg width="16" height="16"><use href="#spark"/></svg></span> Paridhi Saboo</a>
+    <nav class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
+      <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-<!-- ===== HERO ===== -->
-<section class="hero wrap" aria-label="Intro">
+<!-- HERO -->
+<section class="hero wrap">
   <div class="hero-grid">
     <div class="reveal">
-      <p class="eyebrow">est. waterloo &middot; up past midnight</p>
+      <p class="eyebrow">Software Engineer · University of Waterloo</p>
       <h1>Paridhi<br><em>Saboo</em></h1>
-      <p class="lede">second-year CS at Waterloo, out here chasing my <b>first co-op</b>. i build software that works, playlists that don&rsquo;t quit, and dinners that occasionally do. mostly i&rsquo;m curious about everything.</p>
-      <div class="chips">
-        <span class="chip">Waterloo, ON</span>
-        <span class="chip">CS Honours, Co-op</span>
-        <span class="chip hot">open to co-op</span>
-      </div>
+      <p class="lede">Second-year Computer Science student building <b>full-stack products</b> and <b>applied ML</b>.</p>
+      <p class="sub">Currently seeking a software engineering internship / co-op. I care about clean systems, measurable performance, and shipping things people actually use.</p>
       <div class="cta">
-        <a class="btn fill" href="#work">the work</a>
-        <a class="btn line" href="#sound">the sound</a>
-        <a class="btn line" href="https://github.com/paridhisaboo" target="_blank" rel="noopener">github</a>
+        <a class="btn primary" href="work.html">View Work</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn" href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-
     <div class="hero-art reveal" aria-hidden="true">
-      <!-- original: a sleeping cat dreaming a staff of notes, loose + sketchy -->
-      <svg viewBox="0 0 460 380" width="100%" style="max-width:480px">
-        <!-- watercolor wash -->
-        <ellipse filter="url(#water)" cx="250" cy="200" rx="150" ry="120" fill="#4574B8" opacity=".22"/>
-        <ellipse filter="url(#water)" cx="180" cy="250" rx="110" ry="80" fill="#E24E37" opacity=".12"/>
-        <!-- staff of notes flowing out -->
-        <g filter="url(#rough)" stroke="#E9E1CD" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round">
-          <path d="M20 300 Q120 250 230 268 T430 230"/>
-          <path d="M30 320 Q130 272 235 288 T432 252"/>
+      <svg viewBox="0 0 320 320" width="100%" style="max-width:340px">
+        <g class="spin-slow" style="transform-origin:160px 160px">
+          <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,.12)"/>
+          <circle cx="160" cy="160" r="88" fill="none" stroke="rgba(255,255,255,.08)"/>
+          <g transform="translate(160,40)"><use href="#spark" width="26" height="26" x="-13" y="-13"/></g>
+          <g transform="translate(280,160)"><use href="#spark" width="16" height="16" x="-8" y="-8"/></g>
+          <g transform="translate(160,280)"><use href="#spark" width="18" height="18" x="-9" y="-9"/></g>
+          <g transform="translate(40,160)"><use href="#spark" width="14" height="14" x="-7" y="-7"/></g>
         </g>
-        <g filter="url(#rough)" fill="#ECC04B" stroke="#0C1024" stroke-width="1.5">
-          <g><ellipse cx="70" cy="312" rx="9" ry="7" transform="rotate(-18 70 312)"/><rect x="78" y="276" width="2.6" height="38" fill="#ECC04B"/></g>
-          <g><ellipse cx="150" cy="288" rx="9" ry="7" transform="rotate(-18 150 288)"/><rect x="158" y="252" width="2.6" height="38" fill="#E08A39"/></g>
-          <g><ellipse cx="240" cy="284" rx="9" ry="7" transform="rotate(-18 240 284)" fill="#E24E37"/><rect x="248" y="248" width="2.6" height="38" fill="#E24E37"/></g>
-        </g>
-        <!-- stars -->
-        <g class="star" style="color:#ECC04B"><svg x="330" y="70" width="34" height="34"><use href="#star"/></svg></g>
-        <g class="star" style="color:#4574B8"><svg x="120" y="60" width="22" height="22"><use href="#star"/></svg></g>
-        <g class="star" style="color:#E08A39"><svg x="400" y="150" width="18" height="18"><use href="#star"/></svg></g>
-        <!-- the cat: a loose sleeping crescent -->
-        <g filter="url(#rough)" transform="translate(150,120)">
-          <path d="M40 96 C-2 92 -6 38 44 30 C92 22 150 30 176 56 C200 80 196 104 150 104 C150 104 120 86 96 92 C72 98 58 98 40 96 Z"
-            fill="#3B4254" stroke="#0C1024" stroke-width="2.5" stroke-linejoin="round"/>
-          <!-- curled tail -->
-          <path d="M176 56 C210 52 214 96 178 100" fill="none" stroke="#0C1024" stroke-width="3" stroke-linecap="round"/>
-          <!-- head tucked -->
-          <ellipse cx="56" cy="74" rx="30" ry="26" fill="#454C62" stroke="#0C1024" stroke-width="2.5"/>
-          <path d="M34 56 L30 40 L48 52 Z" fill="#454C62" stroke="#0C1024" stroke-width="2.2"/>
-          <path d="M78 56 L84 40 L64 52 Z" fill="#454C62" stroke="#0C1024" stroke-width="2.2"/>
-          <path d="M30 44 L33 52 L41 50 Z" fill="#E08AA0"/>
-          <path d="M82 44 L79 52 L71 50 Z" fill="#E08AA0"/>
-          <!-- closed sleepy eyes -->
-          <path d="M44 74 q6 5 12 0" fill="none" stroke="#0C1024" stroke-width="2" stroke-linecap="round"/>
-          <path d="M62 74 q6 5 12 0" fill="none" stroke="#0C1024" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="58" cy="84" r="2.4" fill="#0C1024"/>
-          <!-- whiskers -->
-          <g stroke="#E9E1CD" stroke-width="1.2" opacity=".8"><path d="M40 84 L14 82"/><path d="M40 88 L16 92"/><path d="M76 84 L100 82"/><path d="M76 88 L98 92"/></g>
-        </g>
-        <text x="250" y="118" font-family="Caveat,cursive" font-size="30" fill="#ECC04B" transform="rotate(-8 250 118)">z z</text>
+        <use href="#spark" width="150" height="150" x="85" y="85"/>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- ===== WORK ===== -->
-<section id="work" class="sec wrap">
-  <div class="sec-head">
-    <span class="num">01</span>
-    <h2>selected work</h2>
-    <span class="kicker">things i shipped</span>
-  </div>
-
-  <div class="work">
-
-    <!-- MacroLens -->
-    <article class="proj reveal">
-      <div class="pinfo">
-        <p class="pnum">i.</p>
-        <h3>MacroLens</h3>
-        <p class="hook">nutrition tracking that skips the math</p>
-        <p class="elab">Scan a barcode, get macros instantly &mdash; pulled from the USDA and Open Food Facts databases, all client-side. The fun problem was speed: re-fetching the same foods dragged, so I sat a Postgres cache in front of every lookup.</p>
-        <ul>
-          <li>client-side <b>barcode scanning</b> across two food databases</li>
-          <li>AI nutrition tips <b>stream in</b> live via the Claude API</li>
-          <li>Prisma schema hardened against concurrent-write races</li>
-        </ul>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Claude API</span></div>
-        <a class="repo" href="https://github.com/paridhisaboo/MacroLens" target="_blank" rel="noopener">view repo →</a>
-      </div>
-      <div class="pgraphic">
-        <span class="corner star"><svg width="20" height="20"><use href="#star"/></svg></span>
-        <p class="gt">cache impact · repeat lookups</p>
-        <div class="bars">
-          <div class="barrow"><span class="lab">no cache</span><div class="track"><div class="fill slow"></div></div><span class="val">~800ms</span></div>
-          <div class="barrow"><span class="lab">cached</span><div class="track"><div class="fill fast"></div></div><span class="val" style="color:var(--gold)">&lt;50ms</span></div>
-        </div>
-        <p class="speedup"><b data-count="16" data-suffix="×">16×</b><span>faster on cached records</span></p>
-      </div>
-    </article>
-
-    <!-- COAT -->
-    <article class="proj flip reveal">
-      <div class="pinfo">
-        <p class="pnum">ii.</p>
-        <h3>COAT</h3>
-        <p class="hook">a co-op tracker that reads my inbox so i don&rsquo;t</p>
-        <p class="elab">Job hunting buries you in email. COAT links Gmail and Outlook, and a model I trained on ~1,200 self-labelled emails sorts each one into offer, interview, or rejection &mdash; then drops interviews on your calendar. A regex fallback catches anything the model isn&rsquo;t sure about.</p>
-        <ul>
-          <li><b>collaborative filtering</b> surfaces leads from anonymized peer outcomes</li>
-          <li>Gmail + Outlook <b>OAuth 2.0</b>, multi-account on Supabase</li>
-        </ul>
-        <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">scikit-learn</span><span class="tag">Supabase</span></div>
-        <a class="repo" href="https://github.com/paridhisaboo/coat" target="_blank" rel="noopener">view repo →</a>
-      </div>
-      <div class="pgraphic">
-        <span class="corner star"><svg width="20" height="20"><use href="#star"/></svg></span>
-        <p class="gt">TF-IDF + logistic regression</p>
-        <div class="donutwrap">
-          <div class="donut">
-            <svg width="124" height="124" viewBox="0 0 124 124">
-              <circle cx="62" cy="62" r="52" fill="none" stroke="rgba(233,225,205,.1)" stroke-width="13"/>
-              <circle class="arc" cx="62" cy="62" r="52" fill="none" stroke="var(--gold)" stroke-width="13" stroke-linecap="round"/>
-            </svg>
-            <div class="ctr"><b data-count="94" data-suffix="%">94%</b><span>cv accuracy</span></div>
-          </div>
-          <div class="legend">
-            <div><i style="background:var(--gold)"></i>offer</div>
-            <div><i style="background:var(--cobalt)"></i>interview</div>
-            <div><i style="background:var(--tomato)"></i>rejection</div>
-          </div>
-        </div>
-        <p class="substat">trained on <b>~1,200</b> self-labelled emails</p>
-      </div>
-    </article>
-
-    <!-- SignSpeak -->
-    <article class="proj reveal">
-      <div class="pinfo">
-        <p class="pnum">iii.</p>
-        <h3>SignSpeak</h3>
-        <p class="hook">indian sign language → speech, in real time</p>
-        <p class="elab">SignSpeak watches a live camera feed and speaks what it sees. I fine-tuned a MediaPipe hand-landmark model on a 26-letter dataset I curated across lighting and hand sizes. The hard part isn&rsquo;t one frame &mdash; it&rsquo;s knowing when a letter ends and a word begins.</p>
-        <ul>
-          <li>a <b>10-frame majority vote</b> kills jitter mid-gesture</li>
-          <li>a thread reads <b>1.5s pauses</b> as word breaks, then fires TTS</li>
-        </ul>
-        <div class="tags"><span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span></div>
-        <a class="repo" href="https://github.com/paridhisaboo/ISLDetector" target="_blank" rel="noopener">view repo →</a>
-      </div>
-      <div class="pgraphic">
-        <span class="corner star"><svg width="20" height="20"><use href="#star"/></svg></span>
-        <p class="gt">gesture-to-speech pipeline</p>
-        <div class="pipe">
-          <div class="pnode"><div class="ic">📷</div><div class="t">camera feed</div></div>
-          <div class="pnode"><div class="ic">✋</div><div class="t">21 landmarks</div></div>
-          <div class="pnode"><div class="ic">🎞️</div><div class="t">10-frame vote</div></div>
-          <div class="pnode"><div class="ic">⏸️</div><div class="t">1.5s = word</div></div>
-          <div class="pnode"><div class="ic">🔊</div><div class="t">TTS out</div></div>
-        </div>
-        <div class="pbadges"><span class="pbadge">26 letters</span><span class="pbadge">self-curated data</span><span class="pbadge">jitter-free</span></div>
-      </div>
-    </article>
-
-    <!-- Netflix -->
-    <article class="proj flip reveal">
-      <div class="pinfo">
-        <p class="pnum">iv.</p>
-        <h3>Netflix Ratings</h3>
-        <p class="hook">imdb + rotten tomatoes, right on the tile</p>
-        <p class="elab">A Manifest V3 Chrome extension that stamps live IMDb and Rotten Tomatoes scores onto Netflix cards before you hover. Netflix is an SPA that swaps its DOM constantly, so the real trick was a MutationObserver that re-injects on every navigation &mdash; no reloads, no flicker.</p>
-        <ul>
-          <li>an <b>OMDb</b> background service worker fetches + caches scores</li>
-          <li><b>MutationObserver</b> survives SPA route changes</li>
-        </ul>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Chrome MV3</span><span class="tag">OMDb API</span></div>
-        <a class="repo" href="https://github.com/paridhisaboo/Netflix-IMDb-RT-Ratings" target="_blank" rel="noopener">view repo →</a>
-      </div>
-      <div class="pgraphic">
-        <span class="corner star"><svg width="20" height="20"><use href="#star"/></svg></span>
-        <p class="gt">extension architecture</p>
-        <div class="arch">
-          <div class="abox"><span class="ic">🎬</span>Netflix tile</div>
-          <div class="abox"><span class="ic">💉</span>content script</div>
-          <div class="abox"><span class="ic">⚙️</span>service worker</div>
-          <div class="abox"><span class="ic">🌐</span>OMDb API</div>
-          <div class="arch-note"><b>MutationObserver</b> re-injects on every DOM swap ↻</div>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- ===== SOUND ===== -->
-<section id="sound" class="sec wrap">
-  <div class="sec-head">
-    <span class="num">02</span>
-    <h2>the sound</h2>
-    <span class="kicker">always something on</span>
-  </div>
-  <div class="music-grid">
-    <div class="player-frame reveal">
-      <div class="ph"><span class="star" style="color:var(--gold)"><svg width="18" height="18"><use href="#star"/></svg></span> currently on the decks</div>
-      <iframe title="Paridhi's playlist" src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="380" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <p class="player-note">my actual mix — updated more often than my commits</p>
-    </div>
-    <div class="reccard reveal">
-      <span class="cn star"><svg width="22" height="22"><use href="#star"/></svg></span>
-      <h4>leave me a track</h4>
-      <p class="sub">i&rsquo;m always building the next set. what belongs on it?</p>
-      <form id="songForm">
-        <label for="s-name">name <span style="opacity:.6">(optional)</span></label>
-        <input id="s-name" name="name" type="text" placeholder="anon" autocomplete="name" />
-        <label for="s-song">song &amp; artist</label>
-        <input id="s-song" name="song" type="text" placeholder="wave to earth — bad" required />
-        <label for="s-why">why this one</label>
-        <textarea id="s-why" name="why" rows="2" placeholder="hits different at 2am"></textarea>
-        <button type="submit">send it →</button>
-        <p class="ok" id="s-ok" role="status"></p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SHELF ===== -->
-<section id="shelf" class="sec wrap">
-  <div class="sec-head">
-    <span class="num">03</span>
-    <h2>the shelf</h2>
-    <span class="kicker">scroll &amp; descend</span>
-  </div>
-  <p class="books-intro reveal">always mid-book, usually three at once &mdash; deep in Japanese &amp; contemporary lit. here are ten i keep coming back to. <em style="color:var(--bone)">scroll, and the stack winds down into a staircase.</em></p>
-</section>
-
-<section class="stair-section" id="stair" aria-hidden="true">
-  <div class="stair-stage">
-    <div class="stair-core" id="stairCore"></div>
-    <div class="stair-hint"><span class="a">↓</span> down we go <span class="a">↓</span></div>
-  </div>
-</section>
-
-<section class="sec wrap" style="padding-top:6px">
-  <h3 style="font-family:Fraunces;font-weight:900;font-size:1.3rem;color:var(--bone-dim);margin:0 0 14px;letter-spacing:.02em">the whole shelf <span style="font-family:Caveat;color:var(--bone-dim)">— 40 deep</span></h3>
-  <ol class="index-grid reveal" id="indexList"></ol>
-
-  <div class="rec-two">
-    <div class="reccard reveal">
-      <span class="cn star"><svg width="22" height="22"><use href="#star"/></svg></span>
-      <h4>leave me a book</h4>
-      <p class="sub">there&rsquo;s always room for one more. what am i missing?</p>
-      <form id="bookForm">
-        <label for="b-name">name <span style="opacity:.6">(optional)</span></label>
-        <input id="b-name" name="name" type="text" placeholder="fellow reader" autocomplete="name" />
-        <label for="b-title">title &amp; author</label>
-        <input id="b-title" name="title" type="text" placeholder="The Setting Sun — Osamu Dazai" required />
-        <label for="b-why">why i&rsquo;ll love it</label>
-        <textarea id="b-why" name="why" rows="2" placeholder="sad in the exact right way"></textarea>
-        <button type="submit">add it →</button>
-        <p class="ok" id="b-ok" role="status"></p>
-      </form>
-    </div>
-    <div class="reccard reveal" style="display:flex;flex-direction:column;justify-content:center">
-      <span class="cn star"><svg width="22" height="22"><use href="#star"/></svg></span>
-      <h4>a note on recs</h4>
-      <p class="sub" style="font-size:.95rem;line-height:1.65;margin:0">Every rec opens your mail app addressed to me &mdash; I read each one, and a lot end up on the shelf or in a set. Want them to show up live for everyone instead? That&rsquo;s a one-line swap to Formspree whenever you want a public guestbook.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TOOLBOX ===== -->
+<!-- SELECTED WORK -->
 <section class="sec wrap">
-  <div class="sec-head">
-    <span class="num">04</span>
-    <h2>toolbox</h2>
-    <span class="kicker">+ a couple shiny things</span>
+  <div class="sec-head reveal">
+    <p class="eyebrow">Selected Work</p>
+    <h2>Four things I <em>shipped</em>.</h2>
   </div>
-  <div class="toolwrap">
-    <div class="toolbox reveal">
-      <div class="toolrow"><span class="h">languages</span><div class="items"><span class="skill">Python</span><span class="skill">C</span><span class="skill">Java</span><span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">SQL</span></div></div>
-      <div class="toolrow"><span class="h">frameworks</span><div class="items"><span class="skill">React</span><span class="skill">Next.js</span><span class="skill">FastAPI</span><span class="skill">Node.js</span><span class="skill">Bootstrap</span></div></div>
-      <div class="toolrow"><span class="h">data &amp; ml</span><div class="items"><span class="skill">PyTorch</span><span class="skill">scikit-learn</span><span class="skill">TensorFlow</span><span class="skill">MediaPipe</span><span class="skill">Pandas</span><span class="skill">OpenCV</span></div></div>
-      <div class="toolrow"><span class="h">infra</span><div class="items"><span class="skill">PostgreSQL</span><span class="skill">Prisma</span><span class="skill">Supabase</span><span class="skill">Git</span><span class="skill">Google Cloud</span><span class="skill">Azure</span></div></div>
-    </div>
-    <div class="awards">
-      <div class="award reveal"><span class="t">award</span><b>President&rsquo;s Scholarship of Distinction</b></div>
-      <div class="award reveal"><span class="t">award</span><b>UW International Student Scholarship</b></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT TEASER ===== -->
-<section id="about" class="sec wrap">
-  <div class="teaser reveal">
-    <span class="lbl">coming next</span>
-    <h3>an about page is in the works</h3>
-    <p>The other half of me &mdash; perception as a hobby: tasting new food, reading texture through my fingertips, getting lost in art. Cindy Sherman&rsquo;s film stills, Aya Takano, shōjo manga, live sets over studio cuts, and the fifteen Murakami novels that started it all.</p>
-    <div class="mini"><span>perception</span><span>cindy sherman</span><span>aya takano</span><span>shōjo manga</span><span>wave to earth</span><span>sunset rollercoaster</span><span>murakami ×15</span></div>
+  <div class="work-list reveal">
+    <a class="work-row" href="work.html#macrolens">
+      <span class="wr-num">01</span><span class="wr-title">MacroLens</span>
+      <span class="wr-desc">Full-stack nutrition tracker — 16× cache speedup</span><span class="wr-arrow">↗</span>
+    </a>
+    <a class="work-row" href="work.html#coat">
+      <span class="wr-num">02</span><span class="wr-title">COAT</span>
+      <span class="wr-desc">Co-op tracker with a 94%-accuracy email classifier</span><span class="wr-arrow">↗</span>
+    </a>
+    <a class="work-row" href="work.html#signspeak">
+      <span class="wr-num">03</span><span class="wr-title">SignSpeak</span>
+      <span class="wr-desc">Real-time sign-language-to-speech on MediaPipe</span><span class="wr-arrow">↗</span>
+    </a>
+    <a class="work-row" href="work.html#netflix">
+      <span class="wr-num">04</span><span class="wr-title">Netflix Ratings</span>
+      <span class="wr-desc">MV3 Chrome extension, live IMDb + RT scores</span><span class="wr-arrow">↗</span>
+    </a>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="sec wrap contact">
-  <div class="reveal">
-    <h2>let&rsquo;s make something</h2>
-    <p class="sub">co-op, side project, or a playlist swap</p>
-    <div class="clinks">
-      <a href="mailto:pasaboo@uwaterloo.ca">✉ pasaboo@uwaterloo.ca</a>
-      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">in / paridhisaboo</a>
-      <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">gh / paridhisaboo</a>
-    </div>
-    <p class="avail"><span class="dot"></span>open to my first co-op — waterloo or remote</p>
+<!-- SKILLS -->
+<section class="sec wrap">
+  <div class="sec-head reveal">
+    <p class="eyebrow">Toolbox</p>
+    <h2>What I build <em>with</em>.</h2>
   </div>
+  <div class="skills reveal">
+    <div class="skillcol"><h4>Languages</h4><ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java · C</li><li>SQL</li></ul></div>
+    <div class="skillcol"><h4>Frameworks</h4><ul><li>React</li><li>Next.js</li><li>FastAPI</li><li>Node.js</li></ul></div>
+    <div class="skillcol"><h4>Data &amp; ML</h4><ul><li>PyTorch</li><li>scikit-learn</li><li>TensorFlow</li><li>MediaPipe · OpenCV</li><li>Pandas</li></ul></div>
+    <div class="skillcol"><h4>Infra</h4><ul><li>PostgreSQL</li><li>Prisma</li><li>Supabase</li><li>Google Cloud · Azure</li><li>Git</li></ul></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact wrap reveal">
+  <p class="eyebrow">Contact</p>
+  <h2>Let&rsquo;s <em>talk</em>.</h2>
+  <div class="clinks">
+    <a href="mailto:pasaboo@uwaterloo.ca">pasaboo@uwaterloo.ca</a>
+    <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+    <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+  </div>
+  <p class="avail"><span class="dot"></span>Open to SWE internship / co-op — Waterloo or remote</p>
 </section>
 </main>
 
-<footer>
-  <span class="star" style="color:var(--gold)"><svg width="24" height="24"><use href="#star"/></svg></span>
-  <p>made under a paper moon — paridhi, 2026</p>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fm">Paridhi Saboo</div>
+    <div class="foot-links">
+      <a href="mailto:pasaboo@uwaterloo.ca">Email</a>
+      <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="cp">© 2026</div>
+  </div>
 </footer>
-
-<!-- turntable -->
-<div class="turntable" id="turntable" role="button" tabindex="0" aria-label="Jump to my playlist">
-  <svg viewBox="0 0 200 160" width="100%" aria-hidden="true">
-    <rect x="6" y="20" width="188" height="134" rx="10" fill="#11152e" stroke="#ECC04B" stroke-width="2"/>
-    <g class="disc">
-      <circle cx="86" cy="92" r="58" fill="#0a0c1c" stroke="#000" stroke-width="1"/>
-      <circle cx="86" cy="92" r="44" fill="none" stroke="#262b48" stroke-width="1"/>
-      <circle cx="86" cy="92" r="34" fill="none" stroke="#262b48" stroke-width="1"/>
-      <circle cx="86" cy="92" r="22" fill="#E24E37"/>
-      <circle cx="86" cy="92" r="21" fill="none" stroke="#ECC04B" stroke-width="1.5"/>
-      <circle cx="86" cy="92" r="3" fill="#0a0c1c"/>
-      <circle cx="86" cy="70" r="2" fill="#11152e"/>
-    </g>
-    <!-- tonearm -->
-    <g class="tonearm">
-      <circle cx="168" cy="30" r="9" fill="#1c2347" stroke="#ECC04B" stroke-width="2"/>
-      <line x1="168" y1="30" x2="104" y2="86" stroke="#cfc7af" stroke-width="4" stroke-linecap="round"/>
-      <rect x="98" y="82" width="14" height="9" rx="2" fill="#ECC04B" transform="rotate(40 105 86)"/>
-    </g>
-  </svg>
-  <div class="tt-label">now spinning ♪</div>
-</div>
 
 <script src="script.js"></script>
 </body>
