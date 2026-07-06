@@ -4,24 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Paridhi Saboo — Software Engineer</title>
-<meta name="description" content="Paridhi Saboo — second-year Computer Science student at the University of Waterloo, seeking a software engineering internship / co-op." />
+<meta name="description" content="Paridhi Saboo — second-year Computer Science student at the University of Waterloo, seeking a Fall 2026 software engineering co-op." />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="#ffffff"/><stop offset=".44" stop-color="#9a9aa0"/><stop offset=".5" stop-color="#37373b"/><stop offset=".56" stop-color="#9a9aa0"/><stop offset="1" stop-color="#ffffff"/>
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".32" stop-color="#c4ccd4"/><stop offset=".47" stop-color="#6b727b"/>
+    <stop offset=".5" stop-color="#232a31"/><stop offset=".53" stop-color="#6b727b"/><stop offset=".7" stop-color="#dbe1e7"/><stop offset="1" stop-color="#ffffff"/>
   </linearGradient>
-  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 C54 34 66 46 100 50 C66 54 54 66 50 100 C46 66 34 54 0 50 C34 46 46 34 50 0 Z" fill="url(#chrome)"/></symbol>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 2 C55 40 60 45 98 50 C60 55 55 60 50 98 C45 60 40 55 2 50 C40 45 45 40 50 2 Z" fill="url(#chrome)"/></symbol>
+  <filter id="bloom"><feGaussianBlur stdDeviation="7"/></filter>
 </defs></svg>
 
-<div class="sky" aria-hidden="true"><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
+<div class="sky" aria-hidden="true"><div class="neb"></div><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
 
 <header class="nav">
   <div class="nav-in">
     <a class="wordmark" href="index.html"><span class="star"><svg width="16" height="16"><use href="#spark"/></svg></span> Paridhi Saboo</a>
     <nav class="nav-links">
-      <a href="work.html">Work</a>
+      <a href="#projects">Projects</a>
       <a href="about.html">About</a>
       <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
       <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
@@ -35,63 +37,124 @@
   <div class="hero-grid">
     <div class="reveal">
       <p class="eyebrow">Software Engineer · University of Waterloo</p>
-      <h1>Paridhi<br><em>Saboo</em></h1>
+      <h1 data-decode>Paridhi<br><em>Saboo</em></h1>
       <p class="lede">Second-year Computer Science student building <b>full-stack products</b> and <b>applied ML</b>.</p>
-      <p class="sub">Currently seeking a software engineering internship / co-op. I care about clean systems, measurable performance, and shipping things people actually use.</p>
+      <p class="sub">I care about clean systems, measurable performance, and shipping things people actually use.</p>
       <div class="cta">
-        <a class="btn primary" href="work.html">View Work</a>
+        <a class="btn primary" href="#projects">View Projects</a>
         <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
         <a class="btn" href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
     <div class="hero-art reveal" aria-hidden="true">
-      <svg viewBox="0 0 320 320" width="100%" style="max-width:340px">
-        <g class="spin-slow" style="transform-origin:160px 160px">
-          <circle cx="160" cy="160" r="120" fill="none" stroke="rgba(255,255,255,.12)"/>
-          <circle cx="160" cy="160" r="88" fill="none" stroke="rgba(255,255,255,.08)"/>
-          <g transform="translate(160,40)"><use href="#spark" width="26" height="26" x="-13" y="-13"/></g>
-          <g transform="translate(280,160)"><use href="#spark" width="16" height="16" x="-8" y="-8"/></g>
-          <g transform="translate(160,280)"><use href="#spark" width="18" height="18" x="-9" y="-9"/></g>
-          <g transform="translate(40,160)"><use href="#spark" width="14" height="14" x="-7" y="-7"/></g>
-        </g>
-        <use href="#spark" width="150" height="150" x="85" y="85"/>
+      <svg class="hero-chrome" viewBox="0 0 320 320">
+        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="var(--cyan-glow)" filter="url(#bloom)" opacity=".5"/>
+        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="url(#chrome)" stroke="#0A1522" stroke-width="1"/>
+        <ellipse cx="132" cy="118" rx="26" ry="12" fill="#ffffff" opacity=".7" filter="url(#bloom)"/>
+        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="none" stroke="#ffffff" stroke-width=".6" opacity=".5"/>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- SELECTED WORK -->
-<section class="sec wrap">
+<!-- PROJECTS (front and center) -->
+<section id="projects" class="sec wrap">
   <div class="sec-head reveal">
     <p class="eyebrow">Selected Work</p>
-    <h2>Four things I <em>shipped</em>.</h2>
+    <h2 data-decode>Things I <em>shipped</em>.</h2>
   </div>
-  <div class="work-list reveal">
-    <a class="work-row" href="work.html#macrolens">
-      <span class="wr-num">01</span><span class="wr-title">MacroLens</span>
-      <span class="wr-desc">Full-stack nutrition tracker — 16× cache speedup</span><span class="wr-arrow">↗</span>
-    </a>
-    <a class="work-row" href="work.html#coat">
-      <span class="wr-num">02</span><span class="wr-title">COAT</span>
-      <span class="wr-desc">Co-op tracker with a 94%-accuracy email classifier</span><span class="wr-arrow">↗</span>
-    </a>
-    <a class="work-row" href="work.html#signspeak">
-      <span class="wr-num">03</span><span class="wr-title">SignSpeak</span>
-      <span class="wr-desc">Real-time sign-language-to-speech on MediaPipe</span><span class="wr-arrow">↗</span>
-    </a>
-    <a class="work-row" href="work.html#netflix">
-      <span class="wr-num">04</span><span class="wr-title">Netflix Ratings</span>
-      <span class="wr-desc">MV3 Chrome extension, live IMDb + RT scores</span><span class="wr-arrow">↗</span>
-    </a>
+  <div class="projects">
+
+    <article class="project reveal">
+      <div class="p-info">
+        <div class="p-top"><span class="p-num">01</span><h3>MacroLens</h3></div>
+        <p class="p-hook">Nutrition tracking that skips the math.</p>
+        <p class="p-elab">Scan a barcode, get macros instantly from the USDA and Open Food Facts databases — all client-side. The engineering problem was speed, so I put a PostgreSQL cache in front of every lookup.</p>
+        <ul>
+          <li>client-side <b>barcode scanning</b> across two food databases</li>
+          <li>AI nutrition tips <b>stream in</b> live via the Claude API</li>
+        </ul>
+        <div class="p-meta">
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Claude API</span></div>
+          <a class="repo" href="https://github.com/paridhisaboo/MacroLens" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+      </div>
+      <div class="p-stat">
+        <span class="fig chrome" data-count="16" data-suffix="×">16×</span>
+        <span class="figlab">faster, cached</span>
+        <ul class="subs"><li>~800ms → &lt;50ms</li><li>USDA + Open Food Facts</li><li>race-safe Prisma schema</li></ul>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-info">
+        <div class="p-top"><span class="p-num">02</span><h3>COAT</h3></div>
+        <p class="p-hook">A co-op tracker that reads my inbox so I don&rsquo;t.</p>
+        <p class="p-elab">COAT links Gmail and Outlook, and a model I trained on ~1,200 self-labelled emails sorts each into offer, interview, or rejection — then drops interviews on your calendar. A regex fallback catches anything low-confidence.</p>
+        <ul>
+          <li><b>collaborative filtering</b> surfaces leads from anonymized peer outcomes</li>
+          <li>Gmail + Outlook <b>OAuth 2.0</b>, multi-account on Supabase</li>
+        </ul>
+        <div class="p-meta">
+          <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">scikit-learn</span><span class="tag">Supabase</span></div>
+          <a class="repo" href="https://github.com/paridhisaboo/coat" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+      </div>
+      <div class="p-stat">
+        <span class="fig chrome" data-count="94" data-suffix="%">94%</span>
+        <span class="figlab">classifier accuracy</span>
+        <ul class="subs"><li>~1,200 labelled emails</li><li>TF-IDF + logistic regression</li><li>offer / interview / reject</li></ul>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-info">
+        <div class="p-top"><span class="p-num">03</span><h3>SignSpeak</h3></div>
+        <p class="p-hook">Indian Sign Language → speech, in real time.</p>
+        <p class="p-elab">SignSpeak watches a live camera feed and speaks what it sees. I fine-tuned a MediaPipe hand-landmark model on a self-curated 26-letter dataset. The hard part isn&rsquo;t one frame — it&rsquo;s knowing when a letter ends and a word begins.</p>
+        <ul>
+          <li>a <b>10-frame majority vote</b> kills jitter mid-gesture</li>
+          <li>a thread reads <b>1.5s pauses</b> as word breaks, then fires TTS</li>
+        </ul>
+        <div class="p-meta">
+          <div class="tags"><span class="tag">Python</span><span class="tag">MediaPipe</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span></div>
+          <a class="repo" href="https://github.com/paridhisaboo/ISLDetector" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+      </div>
+      <div class="p-stat">
+        <span class="fig chrome">LIVE</span>
+        <span class="figlab">ISL → speech</span>
+        <ul class="subs"><li>26-letter alphabet</li><li>10-frame smoothing</li><li>1.5s word boundaries</li></ul>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="p-info">
+        <div class="p-top"><span class="p-num">04</span><h3>Netflix Ratings</h3></div>
+        <p class="p-hook">IMDb + Rotten Tomatoes, right on the tile.</p>
+        <p class="p-elab">A Manifest V3 Chrome extension that stamps live IMDb and Rotten Tomatoes scores onto Netflix cards before you hover. Netflix is an SPA that swaps its DOM constantly, so the trick was a MutationObserver that re-injects on every navigation — no reloads, no flicker.</p>
+        <ul>
+          <li>an <b>OMDb</b> background service worker fetches + caches scores</li>
+          <li><b>MutationObserver</b> survives SPA route changes</li>
+        </ul>
+        <div class="p-meta">
+          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Chrome MV3</span><span class="tag">OMDb API</span></div>
+          <a class="repo" href="https://github.com/paridhisaboo/Netflix-IMDb-RT-Ratings" target="_blank" rel="noopener">Repo ↗</a>
+        </div>
+      </div>
+      <div class="p-stat">
+        <span class="fig chrome">MV3</span>
+        <span class="figlab">chrome extension</span>
+        <ul class="subs"><li>live IMDb + RT</li><li>OMDb service worker</li><li>SPA-proof injection</li></ul>
+      </div>
+    </article>
+
   </div>
 </section>
 
 <!-- SKILLS -->
 <section class="sec wrap">
-  <div class="sec-head reveal">
-    <p class="eyebrow">Toolbox</p>
-    <h2>What I build <em>with</em>.</h2>
-  </div>
+  <div class="sec-head reveal"><p class="eyebrow">Toolbox</p><h2 data-decode>What I build <em>with</em>.</h2></div>
   <div class="skills reveal">
     <div class="skillcol"><h4>Languages</h4><ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java · C</li><li>SQL</li></ul></div>
     <div class="skillcol"><h4>Frameworks</h4><ul><li>React</li><li>Next.js</li><li>FastAPI</li><li>Node.js</li></ul></div>
@@ -103,14 +166,14 @@
 <!-- CONTACT -->
 <section class="contact wrap reveal">
   <p class="eyebrow">Contact</p>
-  <h2>Let&rsquo;s <em>talk</em>.</h2>
+  <h2 data-decode>Let&rsquo;s <em>talk</em>.</h2>
   <div class="clinks">
     <a href="mailto:pasaboo@uwaterloo.ca">pasaboo@uwaterloo.ca</a>
     <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
     <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
   </div>
-  <p class="avail"><span class="dot"></span>Open to SWE internship / co-op — Waterloo or remote</p>
+  <p class="avail"><span class="dot"></span>Open to Fall 2026 SWE co-op — Waterloo or remote</p>
 </section>
 </main>
 
@@ -125,6 +188,21 @@
     <div class="cp">© 2026</div>
   </div>
 </footer>
+
+<!-- vinyl player, top-right -->
+<div class="vinyl" id="vinyl">
+  <button class="vinyl-btn" id="vinylBtn" aria-label="Play my playlist">
+    <svg class="disc" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#0a0f18" stroke="#2a3a4a"/>
+      <circle cx="20" cy="20" r="12" fill="none" stroke="#26333f"/>
+      <circle cx="20" cy="20" r="6" fill="#7FC4E0"/><circle cx="20" cy="20" r="1.6" fill="#0a0f18"/>
+    </svg>
+  </button>
+  <div class="vinyl-pop" id="vinylPop">
+    <div class="vh"><span>now spinning</span><button class="vx" id="vinylClose" aria-label="Close">×</button></div>
+    <iframe id="vinylPlayer" title="mini player" data-src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
