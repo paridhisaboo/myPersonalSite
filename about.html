@@ -13,21 +13,23 @@
     <stop offset="0" stop-color="#ffffff"/><stop offset=".32" stop-color="#c4ccd4"/><stop offset=".47" stop-color="#6b727b"/>
     <stop offset=".5" stop-color="#232a31"/><stop offset=".53" stop-color="#6b727b"/><stop offset=".7" stop-color="#dbe1e7"/><stop offset="1" stop-color="#ffffff"/>
   </linearGradient>
-  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 2 C55 40 60 45 98 50 C60 55 55 60 50 98 C45 60 40 55 2 50 C40 45 45 40 50 2 Z" fill="url(#chrome)"/></symbol>
-  <radialGradient id="moon" cx="38%" cy="36%" r="66%"><stop offset="0" stop-color="#EAF6FB"/><stop offset="60%" stop-color="#A8C9DC"/><stop offset="100%" stop-color="#5E86A0"/></radialGradient>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 L59 41 L100 50 L59 59 L50 100 L41 59 L0 50 L41 41 Z" fill="url(#chrome)"/></symbol>
+  <radialGradient id="moon" cx="38%" cy="36%" r="66%"><stop offset="0" stop-color="#F6F6F7"/><stop offset="60%" stop-color="#C7CACE"/><stop offset="100%" stop-color="#6A6D71"/></radialGradient>
+  <radialGradient id="moonGreen" cx="38%" cy="36%" r="66%"><stop offset="0" stop-color="#D9E4CE"/><stop offset="60%" stop-color="#9FB489"/><stop offset="100%" stop-color="#54614A"/></radialGradient>
   <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+  <mask id="starmask" maskContentUnits="objectBoundingBox"><path d="M.5 0 L.59 .41 L1 .5 L.59 .59 L.5 1 L.41 .59 L0 .5 L.41 .41 Z" fill="#fff"/></mask>
 </defs></svg>
 
 <div class="sky" aria-hidden="true">
   <div class="neb"></div><div class="stars"></div>
   <svg style="position:absolute; top:5%; right:8%; width:150px; height:150px; opacity:.9" viewBox="0 0 150 150">
     <circle cx="75" cy="75" r="46" fill="url(#moon)"/>
-    <circle cx="75" cy="75" r="46" fill="none" stroke="#EAF6FB" stroke-width="1" opacity=".5" filter="url(#soft)"/>
-    <circle cx="62" cy="66" r="7" fill="#5E86A0" opacity=".4"/><circle cx="88" cy="82" r="5" fill="#5E86A0" opacity=".35"/><circle cx="80" cy="58" r="3.5" fill="#5E86A0" opacity=".3"/>
+    <circle cx="75" cy="75" r="46" fill="none" stroke="#F2F3F4" stroke-width="1" opacity=".5" filter="url(#soft)"/>
+    <circle cx="62" cy="66" r="7" fill="#6A6D71" opacity=".4"/><circle cx="88" cy="82" r="5" fill="#6A6D71" opacity=".35"/><circle cx="80" cy="58" r="3.5" fill="#6A6D71" opacity=".3"/>
   </svg>
-  <svg style="position:absolute; top:16%; left:0; width:70%; height:40%; opacity:.5" viewBox="0 0 700 300" preserveAspectRatio="none">
-    <path d="M-20 40 Q200 70 360 150" fill="none" stroke="#A8DCEF" stroke-width="2" stroke-linecap="round" filter="url(#soft)"/>
-    <path d="M-10 120 Q160 150 300 210" fill="none" stroke="#7FC4E0" stroke-width="1.4" stroke-linecap="round" filter="url(#soft)"/>
+  <svg style="position:absolute; top:13%; right:19%; width:46px; height:46px; opacity:.75" viewBox="0 0 150 150" aria-hidden="true">
+    <circle cx="75" cy="75" r="46" fill="url(#moonGreen)"/>
+    <circle cx="75" cy="75" r="46" fill="none" stroke="#D9E4CE" stroke-width="1" opacity=".4" filter="url(#soft)"/>
   </svg>
   <div class="grain"></div><div id="sparkles"></div>
 </div>
@@ -38,6 +40,7 @@
     <nav class="nav-links">
       <a href="index.html#projects">Projects</a>
       <a href="about.html" class="active">About</a>
+      <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
       <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
     </nav>
@@ -45,25 +48,25 @@
 </header>
 
 <main class="wrap">
-<section class="about-hero reveal">
+<section class="about-hero reveal" style="position:relative">
+  <div class="halftone" style="width:220px; height:220px; top:-20px; right:-40px" aria-hidden="true"></div>
   <p class="eyebrow">About</p>
-  <h1 data-decode>Curious about <em>everything</em>.</h1>
-  <p>I&rsquo;m Paridhi — a CS student at Waterloo, but the code is only half of it. My real hobby is <b>perception</b>: chasing new tastes, reading texture through my fingertips, and looking hard at art. I&rsquo;m interested in how things feel before I can explain why.</p>
+  <h1>Curious about <em>everything</em>.</h1>
+  <p>I&rsquo;m Paridhi — a CS student at Waterloo, but the code is only half of it. My real hobby is <b>perception</b>: chasing new tastes, reading texture through my fingertips, and losing hours in a good playlist or a good book. I&rsquo;m interested in how things feel before I can explain why.</p>
 </section>
 
 <section class="about-block reveal">
-  <div class="tcol"><p class="eyebrow">Looking</p><span class="idx">01</span></div>
-  <div class="body">
-    <p>I love work that turns the artist into the subject. <b>Cindy Sherman</b>&rsquo;s <em>Untitled Film Stills</em> — where she plays every character in a movie that never existed — basically wrote the language of self-portraiture that so many women photographers speak now.</p>
-    <p>On the softer, stranger end: <b>Aya Takano</b>&rsquo;s dreamy cosmic figures and the emotional shorthand of <b>shōjo manga</b>. I collect the way images make me feel more than the way they&rsquo;re composed.</p>
-    <ul class="namelist"><li>Cindy Sherman</li><li>Aya Takano</li><li>Shōjo manga</li><li>Self-portraiture</li></ul>
-  </div>
-</section>
-
-<section class="about-block reveal">
-  <div class="tcol"><p class="eyebrow">Listening</p><span class="idx">02</span></div>
+  <div class="tcol"><div class="dot-star" aria-hidden="true"></div><span class="sr-only">Listening</span></div>
   <div class="body">
     <p>I&rsquo;d rather hear a band <em>live</em> than on a studio record — the imperfection makes it real. <b>wave to earth</b> and <b>Sunset Rollercoaster</b> live sets have lived in my head for months. When I&rsquo;m not at a show, I&rsquo;m DJing or building the next playlist.</p>
+    <div class="dj-row reveal">
+      <div class="dj-logo logo-art" role="img" aria-label="Pari's DJ logo — a chrome ring and star"></div>
+      <div class="dj-info">
+        <p class="dj-tag">Next set</p>
+        <p class="dj-event">Under the Bridge<span class="dot"></span>Kitchener · July 29</p>
+        <p class="dj-sub">UWDJ exec, behind the decks most weekends — come find me.</p>
+      </div>
+    </div>
     <div class="music-row">
       <div class="player-frame">
         <iframe title="Paridhi's playlist" src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -84,8 +87,9 @@
   </div>
 </section>
 
-<section class="about-block reveal">
-  <div class="tcol"><p class="eyebrow">Reading</p><span class="idx">03</span></div>
+<section class="about-block reveal" style="position:relative">
+  <div class="halftone" style="width:170px; height:170px; top:0; right:-30px" aria-hidden="true"></div>
+  <div class="tcol"><div class="dot-star dot-star-2" aria-hidden="true"></div><span class="sr-only">Reading</span></div>
   <div class="body">
     <p>Always mid-book, usually three at once. I&rsquo;m deep in <b>Japanese &amp; contemporary literature</b> — I&rsquo;ve read <b>fifteen</b> Murakami novels and I&rsquo;m still going. A handful I keep coming back to:</p>
     <ul class="readlist">
@@ -113,10 +117,10 @@
 
 <section class="contact reveal">
   <p class="eyebrow">Contact</p>
-  <h2 data-decode>Say <em>hello</em>.</h2>
+  <h2>Say <em>hello</em>.</h2>
   <div class="clinks">
     <a href="mailto:pasaboo@uwaterloo.ca">pasaboo@uwaterloo.ca</a>
-    <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
   </div>
 </section>
@@ -128,24 +132,25 @@
     <div class="foot-links">
       <a href="mailto:pasaboo@uwaterloo.ca">Email</a>
       <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="cp">© 2026</div>
   </div>
 </footer>
 
-<div class="vinyl" id="vinyl">
-  <button class="vinyl-btn" id="vinylBtn" aria-label="Play my playlist">
-    <svg class="disc" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
-      <circle cx="20" cy="20" r="19" fill="#0a0f18" stroke="#2a3a4a"/>
-      <circle cx="20" cy="20" r="12" fill="none" stroke="#26333f"/>
-      <circle cx="20" cy="20" r="6" fill="#7FC4E0"/><circle cx="20" cy="20" r="1.6" fill="#0a0f18"/>
-    </svg>
-  </button>
-  <div class="vinyl-pop" id="vinylPop">
-    <div class="vh"><span>now spinning</span><button class="vx" id="vinylClose" aria-label="Close">×</button></div>
-    <iframe id="vinylPlayer" title="mini player" data-src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<div class="player" id="player">
+  <div class="player-panel" id="playerPanel">
+    <div class="player-head"><span>Now Spinning · playlist "chill"</span><button class="player-close" id="playerClose" aria-label="Close">×</button></div>
+    <iframe id="playerFrame" title="Paridhi's playlist" data-src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="380" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </div>
+  <button class="player-pill" id="playerPill" aria-label="Open my playlist">
+    <svg class="disc" width="26" height="26" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#111214" stroke="#3a3d42"/>
+      <circle cx="20" cy="20" r="12" fill="none" stroke="#2c2f33"/>
+      <circle cx="20" cy="20" r="6" fill="#C9CDD3"/><circle cx="20" cy="20" r="1.6" fill="#111214"/>
+    </svg>
+    <span>Now Spinning</span>
+  </button>
 </div>
 
 <script src="script.js"></script>

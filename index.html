@@ -13,11 +13,41 @@
     <stop offset="0" stop-color="#ffffff"/><stop offset=".32" stop-color="#c4ccd4"/><stop offset=".47" stop-color="#6b727b"/>
     <stop offset=".5" stop-color="#232a31"/><stop offset=".53" stop-color="#6b727b"/><stop offset=".7" stop-color="#dbe1e7"/><stop offset="1" stop-color="#ffffff"/>
   </linearGradient>
-  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 2 C55 40 60 45 98 50 C60 55 55 60 50 98 C45 60 40 55 2 50 C40 45 45 40 50 2 Z" fill="url(#chrome)"/></symbol>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0 L59 41 L100 50 L59 59 L50 100 L41 59 L0 50 L41 41 Z" fill="currentColor"/></symbol>
+  <radialGradient id="moon" cx="38%" cy="36%" r="66%"><stop offset="0" stop-color="#F6F6F7"/><stop offset="60%" stop-color="#C7CACE"/><stop offset="100%" stop-color="#6A6D71"/></radialGradient>
+  <radialGradient id="moonGreen" cx="38%" cy="36%" r="66%"><stop offset="0" stop-color="#D9E4CE"/><stop offset="60%" stop-color="#9FB489"/><stop offset="100%" stop-color="#54614A"/></radialGradient>
   <filter id="bloom"><feGaussianBlur stdDeviation="7"/></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+  <mask id="starmask" maskContentUnits="objectBoundingBox"><path d="M.5 0 L.59 .41 L1 .5 L.59 .59 L.5 1 L.41 .59 L0 .5 L.41 .41 Z" fill="#fff"/></mask>
 </defs></svg>
 
-<div class="sky" aria-hidden="true"><div class="neb"></div><div class="stars"></div><div class="grain"></div><div id="sparkles"></div></div>
+<div class="sky" aria-hidden="true">
+  <div class="neb"></div><div class="stars"></div>
+  <svg style="position:absolute; top:6%; right:10%; width:130px; height:130px; opacity:.85" viewBox="0 0 150 150">
+    <circle cx="75" cy="75" r="46" fill="url(#moon)"/>
+    <circle cx="75" cy="75" r="46" fill="none" stroke="#F2F3F4" stroke-width="1" opacity=".5" filter="url(#soft)"/>
+    <circle cx="62" cy="66" r="7" fill="#6A6D71" opacity=".4"/><circle cx="88" cy="82" r="5" fill="#6A6D71" opacity=".35"/><circle cx="80" cy="58" r="3.5" fill="#6A6D71" opacity=".3"/>
+  </svg>
+  <svg style="position:absolute; top:13%; right:20%; width:40px; height:40px; opacity:.7" viewBox="0 0 150 150" aria-hidden="true">
+    <circle cx="75" cy="75" r="46" fill="url(#moonGreen)"/>
+    <circle cx="75" cy="75" r="46" fill="none" stroke="#D9E4CE" stroke-width="1" opacity=".4" filter="url(#soft)"/>
+  </svg>
+  <svg class="constellation" viewBox="0 0 120 100" aria-hidden="true">
+    <line x1="8" y1="82" x2="34" y2="38" stroke="rgba(210,222,250,.4)" stroke-width="1"/>
+    <line x1="34" y1="38" x2="64" y2="52" stroke="rgba(210,222,250,.4)" stroke-width="1"/>
+    <line x1="64" y1="52" x2="98" y2="16" stroke="rgba(210,222,250,.4)" stroke-width="1"/>
+    <circle cx="8" cy="82" r="1.8" fill="#fff"/><circle cx="34" cy="38" r="2.2" fill="#fff"/>
+    <circle cx="64" cy="52" r="1.6" fill="#fff"/><circle cx="98" cy="16" r="2" fill="#fff"/>
+  </svg>
+  <svg class="constellation constellation-2" viewBox="0 0 100 120" aria-hidden="true">
+    <line x1="12" y1="10" x2="30" y2="46" stroke="rgba(210,222,250,.36)" stroke-width="1"/>
+    <line x1="30" y1="46" x2="20" y2="90" stroke="rgba(210,222,250,.36)" stroke-width="1"/>
+    <line x1="30" y1="46" x2="70" y2="60" stroke="rgba(210,222,250,.36)" stroke-width="1"/>
+    <circle cx="12" cy="10" r="1.6" fill="#fff"/><circle cx="30" cy="46" r="2" fill="#fff"/>
+    <circle cx="20" cy="90" r="1.7" fill="#fff"/><circle cx="70" cy="60" r="1.9" fill="#fff"/>
+  </svg>
+  <div class="grain"></div><div id="sparkles"></div>
+</div>
 
 <header class="nav">
   <div class="nav-in">
@@ -25,6 +55,7 @@
     <nav class="nav-links">
       <a href="#projects">Projects</a>
       <a href="about.html">About</a>
+      <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="resume.pdf" target="_blank" rel="noopener" class="res">Résumé</a>
       <a href="mailto:pasaboo@uwaterloo.ca">Contact</a>
     </nav>
@@ -34,10 +65,11 @@
 <main>
 <!-- HERO -->
 <section class="hero wrap">
+  <div class="halftone halftone-b" style="width:240px; height:240px; top:-20px; left:-100px" aria-hidden="true"></div>
   <div class="hero-grid">
     <div class="reveal">
-      <p class="eyebrow">Software Engineer · University of Waterloo</p>
-      <h1 data-decode>Paridhi<br><em>Saboo</em></h1>
+      <p class="eyebrow">Computer Science · University of Waterloo</p>
+      <h1 class="typewrite">Paridhi<br><em>Saboo</em></h1>
       <p class="lede">Second-year Computer Science student building <b>full-stack products</b> and <b>applied ML</b>.</p>
       <p class="sub">I care about clean systems, measurable performance, and shipping things people actually use.</p>
       <div class="cta">
@@ -47,27 +79,37 @@
       </div>
     </div>
     <div class="hero-art reveal" aria-hidden="true">
-      <svg class="hero-chrome" viewBox="0 0 320 320">
-        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="var(--cyan-glow)" filter="url(#bloom)" opacity=".5"/>
-        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="url(#chrome)" stroke="#0A1522" stroke-width="1"/>
-        <ellipse cx="132" cy="118" rx="26" ry="12" fill="#ffffff" opacity=".7" filter="url(#bloom)"/>
-        <path d="M160 8 C172 128 192 148 312 160 C192 172 172 192 160 312 C148 192 128 172 8 160 C128 148 148 128 160 8 Z" fill="none" stroke="#ffffff" stroke-width=".6" opacity=".5"/>
-      </svg>
+      <div class="hero-fairy-wrap" id="heroStar">
+        <div class="hero-orbit-path"></div>
+        <div class="hero-orbit-spin"><span class="hero-orb"></span></div>
+        <div class="hero-orbit-tilt-2">
+          <div class="hero-orbit-path-2"></div>
+          <div class="hero-orbit-spin-2"><span class="hero-orb hero-orb-2"></span></div>
+        </div>
+        <div class="hero-figure">
+          <div class="hero-dotstar" role="img" aria-label="A dotted star, Paridhi's mark"></div>
+          <div class="hero-fairy2 fairy2-art"></div>
+        </div>
+        <span class="hero-mini-dot hero-mini-dot-a"></span>
+        <span class="hero-mini-dot hero-mini-dot-b"></span>
+        <span class="hero-mini-dot hero-mini-dot-c"></span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS (front and center) -->
-<section id="projects" class="sec wrap">
+<section id="projects" class="sec wrap" style="position:relative">
+  <div class="halftone halftone-star halftone-c" style="width:130px; height:130px; top:-6px; right:8px" aria-hidden="true"></div>
   <div class="sec-head reveal">
     <p class="eyebrow">Selected Work</p>
-    <h2 data-decode>Things I <em>shipped</em>.</h2>
+    <h2>Things I <em>shipped</em>.</h2>
   </div>
   <div class="projects">
 
     <article class="project reveal">
       <div class="p-info">
-        <div class="p-top"><span class="p-num">01</span><h3>MacroLens</h3></div>
+        <div class="p-top"><span class="p-num">01</span><h3><span class="txt">MacroLens</span><span class="txt chrome" aria-hidden="true">MacroLens</span></h3></div>
         <p class="p-hook">Nutrition tracking that skips the math.</p>
         <p class="p-elab">Scan a barcode, get macros instantly from the USDA and Open Food Facts databases — all client-side. The engineering problem was speed, so I put a PostgreSQL cache in front of every lookup.</p>
         <ul>
@@ -82,13 +124,15 @@
       <div class="p-stat">
         <span class="fig chrome" data-count="16" data-suffix="×">16×</span>
         <span class="figlab">faster, cached</span>
+        <div class="stat-meter"><div class="stat-meter-track"><div class="stat-meter-fill" data-fill="82"></div></div></div>
         <ul class="subs"><li>~800ms → &lt;50ms</li><li>USDA + Open Food Facts</li><li>race-safe Prisma schema</li></ul>
       </div>
     </article>
 
     <article class="project reveal">
+      <div class="halftone halftone-b" style="width:120px; height:120px; bottom:10px; right:26%" aria-hidden="true"></div>
       <div class="p-info">
-        <div class="p-top"><span class="p-num">02</span><h3>COAT</h3></div>
+        <div class="p-top"><span class="p-num">02</span><h3><span class="txt">COAT</span><span class="txt chrome" aria-hidden="true">COAT</span></h3></div>
         <p class="p-hook">A co-op tracker that reads my inbox so I don&rsquo;t.</p>
         <p class="p-elab">COAT links Gmail and Outlook, and a model I trained on ~1,200 self-labelled emails sorts each into offer, interview, or rejection — then drops interviews on your calendar. A regex fallback catches anything low-confidence.</p>
         <ul>
@@ -103,13 +147,14 @@
       <div class="p-stat">
         <span class="fig chrome" data-count="94" data-suffix="%">94%</span>
         <span class="figlab">classifier accuracy</span>
+        <div class="stat-meter"><div class="stat-meter-track"><div class="stat-meter-fill" data-fill="94"></div></div></div>
         <ul class="subs"><li>~1,200 labelled emails</li><li>TF-IDF + logistic regression</li><li>offer / interview / reject</li></ul>
       </div>
     </article>
 
     <article class="project reveal">
       <div class="p-info">
-        <div class="p-top"><span class="p-num">03</span><h3>SignSpeak</h3></div>
+        <div class="p-top"><span class="p-num">03</span><h3><span class="txt">SignSpeak</span><span class="txt chrome" aria-hidden="true">SignSpeak</span></h3></div>
         <p class="p-hook">Indian Sign Language → speech, in real time.</p>
         <p class="p-elab">SignSpeak watches a live camera feed and speaks what it sees. I fine-tuned a MediaPipe hand-landmark model on a self-curated 26-letter dataset. The hard part isn&rsquo;t one frame — it&rsquo;s knowing when a letter ends and a word begins.</p>
         <ul>
@@ -122,15 +167,17 @@
         </div>
       </div>
       <div class="p-stat">
-        <span class="fig chrome">LIVE</span>
+        <span class="fig typewrite">LIVE</span>
         <span class="figlab">ISL → speech</span>
+        <div class="stat-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
         <ul class="subs"><li>26-letter alphabet</li><li>10-frame smoothing</li><li>1.5s word boundaries</li></ul>
       </div>
     </article>
 
     <article class="project reveal">
+      <div class="halftone halftone-star halftone-c" style="width:100px; height:100px; top:6px; left:38%" aria-hidden="true"></div>
       <div class="p-info">
-        <div class="p-top"><span class="p-num">04</span><h3>Netflix Ratings</h3></div>
+        <div class="p-top"><span class="p-num">04</span><h3><span class="txt">Netflix Ratings</span><span class="txt chrome" aria-hidden="true">Netflix Ratings</span></h3></div>
         <p class="p-hook">IMDb + Rotten Tomatoes, right on the tile.</p>
         <p class="p-elab">A Manifest V3 Chrome extension that stamps live IMDb and Rotten Tomatoes scores onto Netflix cards before you hover. Netflix is an SPA that swaps its DOM constantly, so the trick was a MutationObserver that re-injects on every navigation — no reloads, no flicker.</p>
         <ul>
@@ -143,8 +190,9 @@
         </div>
       </div>
       <div class="p-stat">
-        <span class="fig chrome">MV3</span>
+        <span class="fig typewrite">MV3</span>
         <span class="figlab">chrome extension</span>
+        <div class="stat-pulse" aria-hidden="true"><span></span><span></span><span></span></div>
         <ul class="subs"><li>live IMDb + RT</li><li>OMDb service worker</li><li>SPA-proof injection</li></ul>
       </div>
     </article>
@@ -153,8 +201,9 @@
 </section>
 
 <!-- SKILLS -->
-<section class="sec wrap">
-  <div class="sec-head reveal"><p class="eyebrow">Toolbox</p><h2 data-decode>What I build <em>with</em>.</h2></div>
+<section class="sec wrap" style="position:relative">
+  <div class="halftone halftone-star halftone-b" style="width:100px; height:100px; top:6px; left:-4px" aria-hidden="true"></div>
+  <div class="sec-head reveal"><p class="eyebrow">Toolbox</p><h2>What I build <em>with</em>.</h2></div>
   <div class="skills reveal">
     <div class="skillcol"><h4>Languages</h4><ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java · C</li><li>SQL</li></ul></div>
     <div class="skillcol"><h4>Frameworks</h4><ul><li>React</li><li>Next.js</li><li>FastAPI</li><li>Node.js</li></ul></div>
@@ -166,14 +215,39 @@
 <!-- CONTACT -->
 <section class="contact wrap reveal">
   <p class="eyebrow">Contact</p>
-  <h2 data-decode>Let&rsquo;s <em>talk</em>.</h2>
+  <h2 class="typewrite">Let&rsquo;s <em>talk</em>.</h2>
   <div class="clinks">
     <a href="mailto:pasaboo@uwaterloo.ca">pasaboo@uwaterloo.ca</a>
-    <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
     <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
   </div>
   <p class="avail"><span class="dot"></span>Open to Fall 2026 SWE co-op — Waterloo or remote</p>
+</section>
+
+<!-- CATCH ME NEXT -->
+<section class="sec wrap" style="position:relative">
+  <div class="halftone halftone-star halftone-b" style="width:110px; height:110px; top:-10px; right:0" aria-hidden="true"></div>
+  <div class="sec-head reveal"><p class="eyebrow">Off Duty</p><h2>Catch me <em>next</em>.</h2></div>
+  <div class="gig-card reveal">
+    <div class="gig-cal">
+      <div class="cal-head">July <span>2026</span></div>
+      <div class="cal-grid">
+        <span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span><span class="cal-dow">S</span>
+        <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+        <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
+        <span>27</span><span>28</span><span class="cal-hit">29</span><span>30</span><span>31</span><span></span><span></span>
+      </div>
+    </div>
+    <div class="gig-info">
+      <div class="dj-logo logo-art" role="img" aria-label="Pari's DJ logo"></div>
+      <p class="dj-tag">Next set</p>
+      <p class="dj-event">Under the Bridge<span class="dot"></span>Kitchener, ON</p>
+      <p class="dj-sub">UWDJ exec, behind the decks most weekends — come find me.</p>
+    </div>
+  </div>
 </section>
 </main>
 
@@ -183,25 +257,26 @@
     <div class="foot-links">
       <a href="mailto:pasaboo@uwaterloo.ca">Email</a>
       <a href="https://github.com/paridhisaboo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/paridhisaboo" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/paridhi-saboo-70a339215/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="cp">© 2026</div>
   </div>
 </footer>
 
-<!-- vinyl player, top-right -->
-<div class="vinyl" id="vinyl">
-  <button class="vinyl-btn" id="vinylBtn" aria-label="Play my playlist">
-    <svg class="disc" width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
-      <circle cx="20" cy="20" r="19" fill="#0a0f18" stroke="#2a3a4a"/>
-      <circle cx="20" cy="20" r="12" fill="none" stroke="#26333f"/>
-      <circle cx="20" cy="20" r="6" fill="#7FC4E0"/><circle cx="20" cy="20" r="1.6" fill="#0a0f18"/>
-    </svg>
-  </button>
-  <div class="vinyl-pop" id="vinylPop">
-    <div class="vh"><span>now spinning</span><button class="vx" id="vinylClose" aria-label="Close">×</button></div>
-    <iframe id="vinylPlayer" title="mini player" data-src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+<!-- playlist player, bottom-right — opens into the whole playlist -->
+<div class="player" id="player">
+  <div class="player-panel" id="playerPanel">
+    <div class="player-head"><span>Now Spinning · playlist "chill"</span><button class="player-close" id="playerClose" aria-label="Close">×</button></div>
+    <iframe id="playerFrame" title="Paridhi's playlist" data-src="https://open.spotify.com/embed/playlist/3LbTGxZdEREpLJGWOCsDWL?utm_source=generator&theme=0" height="380" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </div>
+  <button class="player-pill" id="playerPill" aria-label="Open my playlist">
+    <svg class="disc" width="26" height="26" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="19" fill="#111214" stroke="#3a3d42"/>
+      <circle cx="20" cy="20" r="12" fill="none" stroke="#2c2f33"/>
+      <circle cx="20" cy="20" r="6" fill="#C9CDD3"/><circle cx="20" cy="20" r="1.6" fill="#111214"/>
+    </svg>
+    <span>Now Spinning</span>
+  </button>
 </div>
 
 <script src="script.js"></script>
