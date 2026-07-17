@@ -67,15 +67,98 @@
     document.querySelectorAll('.typewrite').forEach(function(el){ twIO.observe(el); });
   }
 
-  /* project spotlight — cursor-tracked glow, no layout shift */
-  if(!touch && !reduce){
-    document.querySelectorAll('.project').forEach(function(p){
-      p.addEventListener('mousemove', function(e){
-        var r=p.getBoundingClientRect();
-        p.style.setProperty('--mx', ((e.clientX-r.left)/r.width*100).toFixed(1)+'%');
-        p.style.setProperty('--my', ((e.clientY-r.top)/r.height*100).toFixed(1)+'%');
+  /* MacroLens — rotate through 3 scanned items every 5s, bars swap with the values */
+  function initMacroDemo(root){
+    var sets=[
+      {label:'Trail mix · 40g', kcal:'234', protein:'18g', fat:'9g', carb:'31g', bars:[38,80,55,95,42,70,30,88,60,48]},
+      {label:'Greek yogurt · 170g', kcal:'150', protein:'15g', fat:'4g', carb:'11g', bars:[60,35,90,50,75,40,85,55,30,65]},
+      {label:'Chicken breast · 100g', kcal:'165', protein:'31g', fat:'4g', carb:'0g', bars:[45,70,25,95,60,40,80,50,65,35]}
+    ];
+    var labelEl=root.querySelector('.ml-item-label');
+    var statEls=root.querySelectorAll('.ml-stat b');
+    var bars=root.querySelectorAll('.ml-barcode span:not(.ml-scanline)');
+    if(!labelEl||!statEls.length||!bars.length) return;
+    function apply(s){
+      labelEl.textContent=s.label;
+      statEls[0].textContent=s.kcal; statEls[1].textContent=s.protein; statEls[2].textContent=s.fat; statEls[3].textContent=s.carb;
+      bars.forEach(function(b,j){ b.style.height=(s.bars[j]||50)+'%'; });
+    }
+    if(reduce){ apply(sets[0]); return; }
+    var idx=0;
+    setInterval(function(){
+      idx=(idx+1)%sets.length;
+      labelEl.style.opacity=0; statEls.forEach(function(el){ el.style.opacity=0; });
+      setTimeout(function(){
+        apply(sets[idx]);
+        labelEl.style.opacity=1; statEls.forEach(function(el){ el.style.opacity=1; });
+      },320);
+    },5000);
+  }
+
+  /* COAT — cycle through example emails, animating each category's confidence bar (showcases the classifier itself) */
+  function initCoatDemo(root){
+    var examples=[
+      {subj:'Re: SWE Intern — Offer!', offer:88, interview:9, reject:3},
+      {subj:'Interview availability next week?', offer:6, interview:83, reject:11},
+      {subj:'Thank you for your application', offer:2, interview:5, reject:93}
+    ];
+    var subjEl=root.querySelector('.coat-email-subj');
+    var rows={offer:root.querySelector('.coat-bar-row-offer'), interview:root.querySelector('.coat-bar-row-interview'), reject:root.querySelector('.coat-bar-row-reject')};
+    var fills={offer:root.querySelector('.coat-bar-offer'), interview:root.querySelector('.coat-bar-interview'), reject:root.querySelector('.coat-bar-reject')};
+    if(!subjEl||!rows.offer) return;
+    function apply(ex){
+      subjEl.textContent=ex.subj;
+      ['offer','interview','reject'].forEach(function(k){
+        fills[k].style.width=ex[k]+'%';
+        var pct=rows[k].querySelector('.coat-bar-pct'); if(pct) pct.textContent=ex[k]+'%';
       });
-    });
+      var top=Object.keys(rows).reduce(function(a,b){ return ex[a]>=ex[b]?a:b; });
+      Object.keys(rows).forEach(function(k){ rows[k].classList.toggle('winner', k===top); });
+    }
+    apply(examples[0]);
+    if(reduce) return;
+    var idx=0;
+    setInterval(function(){
+      idx=(idx+1)%examples.length;
+      subjEl.style.opacity=0;
+      setTimeout(function(){ apply(examples[idx]); subjEl.style.opacity=1; },260);
+    },5000);
+  }
+
+  /* SignSpeak caption — loops through a few fingerspelled phrases */
+  function initSignCaption(el, phrases){
+    if(reduce){ el.textContent=phrases[0]; return; }
+    var pi=0;
+    function cycle(){
+      var text=phrases[pi], ci=0;
+      el.textContent='';
+      var typeIv=setInterval(function(){
+        ci++; el.textContent=text.slice(0,ci);
+        if(ci>=text.length){
+          clearInterval(typeIv);
+          setTimeout(function(){
+            var eraseIv=setInterval(function(){
+              el.textContent=el.textContent.slice(0,-1);
+              if(el.textContent.length===0){ clearInterval(eraseIv); pi=(pi+1)%phrases.length; setTimeout(cycle,300); }
+            },35);
+          },1300);
+        }
+      },80);
+    }
+    cycle();
+  }
+
+  /* project sneak-peek demos — start animating once scrolled into view, respect reduced motion */
+  var demos=document.querySelectorAll('.p-demo');
+  function initDemo(el){
+    if(el.classList.contains('demo-mlens')) initMacroDemo(el);
+    if(el.classList.contains('demo-coat')) initCoatDemo(el);
+    if(el.classList.contains('demo-signspeak')){ var cap=el.querySelector('.ss-caption'); if(cap) initSignCaption(cap, ['HELLO', "I'M PARIDHI", 'PLEASE HIRE ME']); }
+  }
+  if(reduce){ demos.forEach(function(el){ el.classList.add('play'); initDemo(el); }); }
+  else{
+    var dio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('play'); initDemo(e.target); dio.unobserve(e.target);} });},{threshold:.35});
+    demos.forEach(function(el){ dio.observe(el); });
   }
 
   /* chrome cursor star — a smooth, glitch-free shimmer trail (no rotation jitter) */
